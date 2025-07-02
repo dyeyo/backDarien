@@ -17,7 +17,7 @@ Este es un proyecto de **API REST desarrollada con Laravel 11** para la gestión
 1. **Clona el repositorio**:
 
    ```bash
-   git clone https://github.com/tu-usuario/laravel-tasks-api.git
+   git clone https://github.com/dyeyo/FrontDarien-.git
    cd laravel-tasks-api
    ```
 
