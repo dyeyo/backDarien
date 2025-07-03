@@ -6,6 +6,7 @@ use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Http\Services\TaskService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -15,6 +16,11 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
+        if (!Auth::check()) {
+            return response()->json([
+                'error' => 'No autenticado.'
+            ], 401);
+        }
         return response()->json($this->taskService->list($request->user()));
     }
 
